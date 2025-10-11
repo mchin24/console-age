@@ -1,0 +1,376 @@
+{
+    "consoles": [
+        {
+            "name": "Odyssey",
+            "manufacturer": "Magnavox",
+            "release_date": "1972-09-01",
+            "image_url": "https://example.com/odyssey.png"
+        },
+        {
+            "name": "Channel F",
+            "manufacturer": "Fairchild",
+            "release_date": "1976-11-01",
+            "image_url": "https://example.com/channel-f.png"
+        },
+        {
+            "name": "Atari 2600",
+            "manufacturer": "Atari",
+            "release_date": "1977-09-11",
+            "image_url": "https://example.com/atari-2600.png"
+        },
+        {
+            "name": "Intellivision",
+            "manufacturer": "Mattel",
+            "release_date": "1979-12-03",
+            "image_url": "https://example.com/intellivision.png"
+        },
+        {
+            "name": "ColecoVision",
+            "manufacturer": "Coleco",
+            "release_date": "1982-08-01",
+            "image_url": "https://example.com/colecovision.png"
+        },
+        {
+            "name": "Atari 5200",
+            "manufacturer": "Atari",
+            "release_date": "1982-11-01",
+            "image_url": "https://example.com/atari-5200.png"
+        },
+        {
+            "name": "Nintendo Entertainment System",
+            "manufacturer": "Nintendo",
+            "release_date": "1985-10-18",
+            "image_url": "https://example.com/nes.png"
+        },
+        {
+            "name": "Sega Master System",
+            "manufacturer": "Sega",
+            "release_date": "1986-10-20",
+            "image_url": "https://example.com/sega-master-system.png"
+        },
+        {
+            "name": "Atari 7800",
+            "manufacturer": "Atari",
+            "release_date": "1986-05-01",
+            "image_url": "https://example.com/atari-7800.png"
+        },
+        {
+            "name": "TurboGrafx-16",
+            "manufacturer": "NEC",
+            "release_date": "1989-08-29",
+            "image_url": "https://example.com/turbografx-16.png"
+        },
+        {
+            "name": "Sega Genesis",
+            "manufacturer": "Sega",
+            "release_date": "1989-08-14",
+            "image_url": "https://example.com/sega-genesis.png"
+        },
+        {
+            "name": "Super Nintendo Entertainment System",
+            "manufacturer": "Nintendo",
+            "release_date": "1991-08-23",
+            "image_url": "https://example.com/snes.png"
+        },
+        {
+            "name": "Sega CD",
+            "manufacturer": "Sega",
+            "release_date": "1992-10-15",
+            "image_url": "https://example.com/sega-cd.png"
+        },
+        {
+            "name": "Atari Jaguar",
+            "manufacturer": "Atari",
+            "release_date": "1993-11-23",
+            "image_url": "https://example.com/atari-jaguar.png"
+        },
+        {
+            "name": "3DO Interactive Multiplayer",
+            "manufacturer": "Panasonic",
+            "release_date": "1993-10-04",
+            "image_url": "https://example.com/3do.png"
+        },
+        {
+            "name": "Sega Saturn",
+            "manufacturer": "Sega",
+            "release_date": "1995-05-11",
+            "image_url": "https://example.com/sega-saturn.png"
+        },
+        {
+            "name": "PlayStation",
+            "manufacturer": "Sony",
+            "release_date": "1995-09-09",
+            "image_url": "https://example.com/playstation.png"
+        },
+        {
+            "name": "Nintendo 64",
+            "manufacturer": "Nintendo",
+            "release_date": "1996-09-29",
+            "image_url": "https://example.com/nintendo-64.png"
+        },
+        {
+            "name": "Dreamcast",
+            "manufacturer": "Sega",
+            "release_date": "1999-09-09",
+            "image_url": "https://example.com/dreamcast.png"
+        },
+        {
+            "name": "PlayStation 2",
+            "manufacturer": "Sony",
+            "release_date": "2000-10-26",
+            "image_url": "https://example.com/ps2.png"
+        },
+        {
+            "name": "Xbox",
+            "manufacturer": "Microsoft",
+            "release_date": "2001-11-15",
+            "image_url": "https://example.com/xbox.png"
+        },
+        {
+            "name": "GameCube",
+            "manufacturer": "Nintendo",
+            "release_date": "2001-11-18",
+            "image_url": "https://example.com/gamecube.png"
+        },
+        {
+            "name": "Xbox 360",
+            "manufacturer": "Microsoft",
+            "release_date": "2005-11-22",
+            "image_url": "https://example.com/xbox-360.png"
+        },
+        {
+            "name": "PlayStation 3",
+            "manufacturer": "Sony",
+            "release_date": "2006-11-17",
+            "image_url": "https://example.com/ps3.png"
+        },
+        {
+            "name": "Wii",
+            "manufacturer": "Nintendo",
+            "release_date": "2006-11-19",
+            "image_url": "https://example.com/wii.png"
+        },
+        {
+            "name": "Wii U",
+            "manufacturer": "Nintendo",
+            "release_date": "2012-11-18",
+            "image_url": "https://example.com/wii-u.png"
+        },
+        {
+            "name": "PlayStation 4",
+            "manufacturer": "Sony",
+            "release_date": "2013-11-15",
+            "image_url": "https://example.com/ps4.png"
+        },
+        {
+            "name": "Xbox One",
+            "manufacturer": "Microsoft",
+            "release_date": "2013-11-22",
+            "image_url": "https://example.com/xbox-one.png"
+        },
+        {
+            "name": "Nintendo Switch",
+            "manufacturer": "Nintendo",
+            "release_date": "2017-03-03",
+            "image_url": "https://example.com/nintendo-switch.png"
+        },
+        {
+            "name": "Nintendo Switch Lite",
+            "manufacturer": "Nintendo",
+            "release_date": "2019-09-20",
+            "image_url": "https://example.com/nintendo-switch-lite.png"
+        },
+        {
+            "name": "Nintendo Switch OLED",
+            "manufacturer": "Nintendo",
+            "release_date": "2021-10-08",
+            "image_url": "https://example.com/nintendo-switch-oled.png"
+        },
+        {
+            "name": "Xbox Series X",
+            "manufacturer": "Microsoft",
+            "release_date": "2020-11-10",
+            "image_url": "https://example.com/xbox-series-x.png"
+        },
+        {
+            "name": "Xbox Series S",
+            "manufacturer": "Microsoft",
+            "release_date": "2020-11-10",
+            "image_url": "https://example.com/xbox-series-s.png"
+        },
+        {
+            "name": "PlayStation 5",
+            "manufacturer": "Sony",
+            "release_date": "2020-11-12",
+            "image_url": "https://example.com/ps5.png"
+        },
+        {
+            "name": "Game Boy",
+            "manufacturer": "Nintendo",
+            "release_date": "1989-07-31",
+            "image_url": "https://example.com/game-boy.png"
+        },
+        {
+            "name": "Game Gear",
+            "manufacturer": "Sega",
+            "release_date": "1991-04-26",
+            "image_url": "https://example.com/game-gear.png"
+        },
+        {
+            "name": "Atari Lynx",
+            "manufacturer": "Atari",
+            "release_date": "1989-09-01",
+            "image_url": "https://example.com/atari-lynx.png"
+        },
+        {
+            "name": "TurboExpress",
+            "manufacturer": "NEC",
+            "release_date": "1990-12-01",
+            "image_url": "https://example.com/turboexpress.png"
+        },
+        {
+            "name": "Neo Geo Pocket",
+            "manufacturer": "SNK",
+            "release_date": "1999-08-01",
+            "image_url": "https://example.com/neo-geo-pocket.png"
+        },
+        {
+            "name": "Game Boy Color",
+            "manufacturer": "Nintendo",
+            "release_date": "1998-11-18",
+            "image_url": "https://example.com/game-boy-color.png"
+        },
+        {
+            "name": "WonderSwan",
+            "manufacturer": "Bandai",
+            "release_date": "1999-03-04",
+            "image_url": "https://example.com/wonderswan.png"
+        },
+        {
+            "name": "Game Boy Advance",
+            "manufacturer": "Nintendo",
+            "release_date": "2001-06-11",
+            "image_url": "https://example.com/game-boy-advance.png"
+        },
+        {
+            "name": "Game Boy Advance SP",
+            "manufacturer": "Nintendo",
+            "release_date": "2003-03-23",
+            "image_url": "https://example.com/game-boy-advance-sp.png"
+        },
+        {
+            "name": "N-Gage",
+            "manufacturer": "Nokia",
+            "release_date": "2003-10-07",
+            "image_url": "https://example.com/n-gage.png"
+        },
+        {
+            "name": "Nintendo DS",
+            "manufacturer": "Nintendo",
+            "release_date": "2004-11-21",
+            "image_url": "https://example.com/nintendo-ds.png"
+        },
+        {
+            "name": "Nintendo DS Lite",
+            "manufacturer": "Nintendo",
+            "release_date": "2006-06-11",
+            "image_url": "https://example.com/nintendo-ds-lite.png"
+        },
+        {
+            "name": "PlayStation Portable",
+            "manufacturer": "Sony",
+            "release_date": "2005-03-24",
+            "image_url": "https://example.com/psp.png"
+        },
+        {
+            "name": "Game Boy Micro",
+            "manufacturer": "Nintendo",
+            "release_date": "2005-09-19",
+            "image_url": "https://example.com/game-boy-micro.png"
+        },
+        {
+            "name": "Nintendo DSi",
+            "manufacturer": "Nintendo",
+            "release_date": "2009-04-05",
+            "image_url": "https://example.com/nintendo-dsi.png"
+        },
+        {
+            "name": "Nintendo DSi XL",
+            "manufacturer": "Nintendo",
+            "release_date": "2010-03-28",
+            "image_url": "https://example.com/nintendo-dsi-xl.png"
+        },
+        {
+            "name": "Nintendo 3DS",
+            "manufacturer": "Nintendo",
+            "release_date": "2011-03-27",
+            "image_url": "https://example.com/nintendo-3ds.png"
+        },
+        {
+            "name": "Nintendo 3DS XL",
+            "manufacturer": "Nintendo",
+            "release_date": "2012-08-19",
+            "image_url": "https://example.com/nintendo-3ds-xl.png"
+        },
+        {
+            "name": "Nintendo 2DS",
+            "manufacturer": "Nintendo",
+            "release_date": "2013-10-12",
+            "image_url": "https://example.com/nintendo-2ds.png"
+        },
+        {
+            "name": "New Nintendo 3DS",
+            "manufacturer": "Nintendo",
+            "release_date": "2015-09-25",
+            "image_url": "https://example.com/new-nintendo-3ds.png"
+        },
+        {
+            "name": "New Nintendo 3DS XL",
+            "manufacturer": "Nintendo",
+            "release_date": "2015-02-13",
+            "image_url": "https://example.com/new-nintendo-3ds-xl.png"
+        },
+        {
+            "name": "New Nintendo 2DS XL",
+            "manufacturer": "Nintendo",
+            "release_date": "2017-07-28",
+            "image_url": "https://example.com/new-nintendo-2ds-xl.png"
+        },
+        {
+            "name": "PlayStation Vita",
+            "manufacturer": "Sony",
+            "release_date": "2012-02-22",
+            "image_url": "https://example.com/ps-vita.png"
+        },
+        {
+            "name": "Steam Deck",
+            "manufacturer": "Valve",
+            "release_date": "2022-02-25",
+            "image_url": "https://example.com/steam-deck.png"
+        },
+        {
+            "name": "ASUS ROG Ally",
+            "manufacturer": "ASUS",
+            "release_date": "2023-06-13",
+            "image_url": "https://example.com/rog-ally.png"
+        },
+        {
+            "name": "Lenovo Legion Go",
+            "manufacturer": "Lenovo",
+            "release_date": "2023-11-01",
+            "image_url": "https://example.com/legion-go.png"
+        },
+        {
+            "name": "MSI Claw",
+            "manufacturer": "MSI",
+            "release_date": "2024-03-08",
+            "image_url": "https://example.com/msi-claw.png"
+        },
+        {
+            "name": "ASUS ROG Ally X",
+            "manufacturer": "ASUS",
+            "release_date": "2024-07-22",
+            "image_url": "https://example.com/rog-ally-x.png"
+        }
+    ]
+}
