@@ -1,13 +1,26 @@
-version: '3'
 services:
-  vxml:
-    platform: linux/amd64
-    build:
-      context: .
-      dockerfile: Dockerfile
-    image: consoleages:latest
-    restart: always
-    ports:
-      - "8081:80"
-    volumes:
-      - ./public/:/usr/share/nginx/html/
+    webapp:
+        platform: linux/amd64
+        build:
+            context: .
+            dockerfile: dockerfile
+        image: consoleages:latest
+        restart: always
+        ports:
+            - "2480:80"
+        volumes:
+            - ./public/:/usr/share/nginx/html/
+
+    db:
+        image: postgres:latest
+        ports:
+            - "5432:5432"
+        user: postgres
+        environment:
+            POSTGRES_PASSWORD: ChangeMe
+            POSTGRES_DB: consoleages
+        volumes:
+            - db_data:/var/lib/postgresql
+
+volumes:
+    db_data:
