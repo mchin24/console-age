@@ -1,33 +1,44 @@
 # Active Context: Console Age Display
 
 ## Current Work Focus
-Memory bank initialization complete. All core project functionality has been successfully implemented and tested.
+**Code review and CRUD planning phase complete.** Project is currently in planning stage for full-stack CRUD implementation with learning-focused approach.
 
 ## Recent Changes
-1. **Memory Bank Creation**: Established complete documentation structure
-   - Project brief defining core requirements
-   - Product context explaining user experience goals
-   - System patterns documenting architecture decisions
-   - Technical context covering technology stack and setup
+1. **Comprehensive Code Review** (2026-03-26)
+   - Reviewed all memory bank documentation files
+   - Analyzed entire source code base (HTML, CSS, JS, Docker configs)
+   - Identified 3 bugs requiring fixes before CRUD implementation
+   - Documented findings in `knownIssues.md`
 
-2. **File Structure Optimization**: Separated embedded code into external files
-   - Extracted CSS to external `styles.css` file
-   - Separated JavaScript to external `script.js` file  
-   - Clean HTML file with proper external references
-   - Improved maintainability and code organization
+2. **CRUD Implementation Planning** (2026-03-26)
+   - Created detailed implementation plan in `crudPlan.md`
+   - Designed full-stack architecture (Node.js + Express + PostgreSQL)
+   - Defined RESTful API endpoints and database schema
+   - Established learning-focused development approach
+   - No authentication for initial implementation
 
-3. **Project Completion**: Successfully delivered all requested features
-   - Modern HTML5 page with semantic markup
-   - Professional CSS styling with responsive design
-   - Dynamic age calculation from JSON data
-   - Docker deployment with nginx server
-   - Proper development environment setup
+3. **Memory Bank Expansion**
+   - Added `knownIssues.md` - Comprehensive bug tracking
+   - Added `crudPlan.md` - Detailed CRUD implementation roadmap
+   - Updated documentation to reflect current project state
 
 ## Next Steps
-- Memory bank is now established for future development
-- Project ready for potential TypeScript enhancements
-- Documentation provides clear foundation for continued work
-- All development tools and processes are properly configured
+1. **Bug Fixes** (Phase 0)
+   - Fix sorting order in script.js (oldest to newest)
+   - Update docker-compose.yml port from 2480 to 8081
+   - Document PostgreSQL service purpose
+
+2. **CRUD Implementation** (Phases 1-5)
+   - Phase 1: Backend Setup (Node.js/Express API)
+   - Phase 2: Database Setup (PostgreSQL schema & seed data)
+   - Phase 3: Frontend Enhancement (modal forms, CRUD UI)
+   - Phase 4: Integration & Testing
+   - Phase 5: Documentation updates
+
+3. **Future Considerations**
+   - TypeScript migration (original project goal)
+   - Additional features (search, filter, pagination)
+   - Authentication/authorization
 
 ## Active Decisions and Considerations
 
@@ -39,17 +50,33 @@ Memory bank initialization complete. All core project functionality has been suc
 - **Deployment**: nginx:alpine for lightweight, efficient serving
 - **Development**: Docker Compose for consistent local environment
 
+### CRUD Implementation Decisions (2026-03-26)
+- **Backend**: Node.js + Express for RESTful API
+- **Database**: PostgreSQL (already configured in docker-compose.yml)
+- **Authentication**: Skipped for initial learning implementation
+- **Approach**: Learning-focused with extensive comments and documentation
+- **API Design**: RESTful conventions with proper HTTP methods/status codes
+- **Database Schema**: Single `consoles` table with audit timestamps
+
 ### Design Patterns Established
 - Component-based CSS classes for reusability
 - Color-coded age categories (vintage/retro/modern)
 - Clean error handling with user-friendly messages
 - Mobile-first responsive design approach
 
+### Known Issues Identified
+1. **Critical**: Sorting order reversed (newest first instead of oldest first)
+2. **Medium**: Port mismatch (2480 vs 8081 documented)
+3. **Low**: PostgreSQL service defined but unused (will be utilized for CRUD)
+
+See `knownIssues.md` for complete bug documentation.
+
 ### Project Insights
 - Vanilla JavaScript provides excellent learning foundation
 - Docker deployment ensures consistent environment across systems
-- Embedded styles reduce HTTP requests and improve performance
-- JSON data structure allows easy expansion of console database
+- Separation of CSS/JS improves maintainability for CRUD additions
+- JSON data structure provides good seed data for database migration
+- Existing PostgreSQL service is perfectly positioned for CRUD implementation
 
 ## Important Patterns and Preferences
 - **Code Organization**: Separated CSS and JavaScript files for better maintainability
@@ -60,9 +87,25 @@ Memory bank initialization complete. All core project functionality has been suc
 - **File Structure**: External assets properly linked in HTML head section
 
 ## Current Project State
-✅ **Complete and Functional**
-- All core requirements implemented
-- Docker deployment working on localhost:8081
-- Clean, professional styling applied
-- Responsive design tested
-- Memory bank established for future development
+⚠️ **Phase Complete with Known Issues**
+
+### Working Features
+- ✅ Read-only console display functional
+- ✅ Docker deployment operational (localhost:2480)
+- ✅ Clean, professional styling applied
+- ✅ Responsive design implemented
+- ✅ Memory bank comprehensive and up-to-date
+
+### Issues to Address
+- ❌ Sorting order bug (shows newest first)
+- ❌ Port configuration inconsistency (2480 vs 8081)
+- ⏸️ PostgreSQL service unused (awaiting CRUD)
+
+### Ready for Implementation
+- 📋 CRUD plan complete and detailed
+- 📋 Bug fixes documented with solutions
+- 📋 Architecture designed for full-stack app
+- 📋 Learning objectives defined
+- 📋 Phase-by-phase roadmap established
+
+**Status**: Planning complete, ready to begin Phase 0 (bug fixes) followed by CRUD implementation.
