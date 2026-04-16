@@ -371,6 +371,12 @@
             "manufacturer": "ASUS",
             "release_date": "2024-07-22",
             "image_url": "https://example.com/rog-ally-x.png"
+        },
+        {
+            "console": "fixedyet",
+            "manufacturer": "wii",
+            "release_date": "2026-03-29",
+            "image_url": "https://example.com/default.png"
         }
     ]
 }
