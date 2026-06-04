@@ -128,6 +128,52 @@ tr:hover {
     border: 1px solid #fecaca;
 }
 
+button.edit-console-btn {
+    background: #4c63d2;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 0.75rem;
+    border-radius: 6px;
+    cursor: pointer;
+}
+button.edit-console-btn:hover {
+    background: #3b4eb8;
+}
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+.modal-content {
+    background: #fff;
+    border-radius: 12px;
+    padding: 1.5rem;
+    width: min(420px, 90vw);
+    box-shadow: 0 20px 45px rgba(15, 23, 42, 0.15);
+}
+.modal-content label {
+    display: block;
+    margin-top: 1rem;
+    font-weight: 600;
+}
+.modal-content input {
+    width: 100%;
+    margin-top: 0.5rem;
+    padding: 0.6rem;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+}
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.75rem;
+    margin-top: 1.25rem;
+}
+
 @media (max-width: 768px) {
     body {
         padding: 1rem;

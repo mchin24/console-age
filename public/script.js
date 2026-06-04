@@ -21,7 +21,7 @@ fetch('consoles.json')
         const headerRow = document.createElement('tr');
         
         // Create table headers
-        const headers = ['Console', 'Release Date', 'Age'];
+        const headers = ['Console', 'Manufacturer', 'Release Date', 'Age', 'Actions'];
         headers.forEach(headerText => {
             const header = document.createElement('th');
             header.textContent = headerText;
@@ -30,58 +30,41 @@ fetch('consoles.json')
         table.appendChild(headerRow);
         
         // Populate table with console data
-        data.consoles.forEach(console => {
+        data.consoles.forEach((consoleItem, index) => {
             const row = document.createElement('tr');
-            
-            // Console name and manufacturer
+
             const nameCell = document.createElement('td');
-            nameCell.innerHTML = `
-                <div class="console-name">${console.name}</div>
-                <div class="manufacturer">${console.manufacturer}</div>
-            `;
+            nameCell.textContent = consoleItem.name || consoleItem.console || '';
             row.appendChild(nameCell);
-            
-            // Release date
-            const yearCell = document.createElement('td');
-            const releaseDate = new Date(console.release_date);
-            const formattedDate = releaseDate.toLocaleDateString('en-US', {
-                year: 'numeric',
-                month: 'short'
-            });
-            yearCell.innerHTML = `<span class="release-date">${formattedDate}</span>`;
-            row.appendChild(yearCell);
-            
-            // Age calculation
+
+            const manufacturerCell = document.createElement('td');
+            manufacturerCell.textContent = consoleItem.manufacturer || '';
+            row.appendChild(manufacturerCell);
+
+            const dateCell = document.createElement('td');
+            dateCell.textContent = consoleItem.release_date || '';
+            row.appendChild(dateCell);
+
             const ageCell = document.createElement('td');
-            let ageYears = currentDate.getFullYear() - releaseDate.getFullYear();
-            let ageMonths = currentDate.getMonth() - releaseDate.getMonth();
-            
-            if (ageMonths < 0) {
-                ageYears--;
-                ageMonths += 12;
-            }
-
-            // Add age category class for styling
-            let ageClass = 'modern';
-            if (ageYears > 30) {
-                ageClass = 'vintage';
-            } else if (ageYears > 10) {
-                ageClass = 'retro';
-            }
-
-            const ageText = ageYears > 0 
-                ? `${ageYears} years, ${ageMonths} months`
-                : `${ageMonths} months`;
-            
-            ageCell.innerHTML = `<span class="age ${ageClass}">${ageText}</span>`;
+            ageCell.textContent = consoleItem.age || '';
+            ageCell.className = 'age';
             row.appendChild(ageCell);
-            
+
+            const actionCell = document.createElement('td');
+            const editButton = document.createElement('button');
+            editButton.textContent = 'Edit';
+            editButton.className = 'edit-console-btn';
+            editButton.addEventListener('click', () => openEditModal(consoleItem, index, row));
+            actionCell.appendChild(editButton);
+            row.appendChild(actionCell);
+
             table.appendChild(row);
         });
         
         // Show content and append table
         const contentDiv = document.getElementById('content');
-        contentDiv.appendChild(table);
+
+
         // NEW 4/15
         // Add button to add a new console
         const addButton = document.createElement('button');
@@ -90,6 +73,9 @@ fetch('consoles.json')
         addButton.onclick = () => openModal();
         contentDiv.appendChild(addButton);
         //END NEW 4/15
+
+        contentDiv.appendChild(table);
+
         
         contentDiv.style.display = 'block';
     })
@@ -207,7 +193,7 @@ function openModal() {
     form.onsubmit = async (e) => {
         e.preventDefault();
         const newConsole = {
-            console: nameInput.value,
+            name: nameInput.value,
             manufacturer: manufacturerInput.value,
             release_date: dateInput.value,
             image_url: imageInput.value || 'https://example.com/default.png'
@@ -231,4 +217,95 @@ function openModal() {
             alert('Error adding console.');
         }
     };  //END NEW 4/15
+}
+
+function openEditModal(consoleItem, index, row) {
+    const modal = document.createElement('div');
+    modal.className = 'modal-overlay';
+
+    const modalContent = document.createElement('div');
+    modalContent.className = 'modal-content';
+
+    const title = document.createElement('h2');
+    title.textContent = 'Edit Console';
+    modalContent.appendChild(title);
+
+    function createField(labelText, type, value) {
+        const label = document.createElement('label');
+        label.textContent = labelText;
+        const input = document.createElement('input');
+        input.type = type;
+        input.value = value || '';
+        input.required = true;
+        label.appendChild(input);
+        modalContent.appendChild(label);
+        return input;
+    }
+
+    const consoleInput = createField('Console', 'text', consoleItem.name || consoleItem.console || '');
+    const manufacturerInput = createField('Manufacturer', 'text', consoleItem.manufacturer || '');
+    const releaseInput = createField('Release Date', 'date', consoleItem.release_date || '');
+
+    const buttonRow = document.createElement('div');
+    buttonRow.className = 'modal-actions';
+
+    const cancelButton = document.createElement('button');
+    cancelButton.type = 'button';
+    cancelButton.textContent = 'Cancel';
+    cancelButton.addEventListener('click', () => document.body.removeChild(modal));
+
+    const saveButton = document.createElement('button');
+    saveButton.type = 'button';
+    saveButton.textContent = 'Save';
+    saveButton.addEventListener('click', async () => {
+        if (!consoleInput.value.trim() || !manufacturerInput.value.trim() || !releaseInput.value) {
+            alert('Please fill in all fields.');
+            return;
+        }
+
+        const idx = Number(index); // ensure numeric
+        const payload = {
+            index: idx,
+            name: consoleInput.value.trim(),
+            manufacturer: manufacturerInput.value.trim(),
+            release_date: releaseInput.value,
+            image_url: consoleItem.image_url || 'https://example.com/default.png'
+        };
+
+        console.log('update-console payload', payload);
+
+        try {
+            const response = await fetch('/update-console', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            });
+
+            if (!response.ok) {
+                const error = await response.json().catch(() => ({}));
+                alert(error.error || 'Unable to save changes');
+                return;
+            }
+
+            const updated = await response.json();
+            consoleItem.name = updated.name;
+            consoleItem.manufacturer = updated.manufacturer;
+            consoleItem.release_date = updated.release_date;
+            consoleItem.image_url = updated.image_url;
+
+            row.children[0].textContent = updated.name;
+            row.children[1].textContent = updated.manufacturer;
+            row.children[2].textContent = updated.release_date;
+
+            document.body.removeChild(modal);
+        } catch (err) {
+            console.error(err);
+            alert('Could not save console changes.');
+        }
+    });
+
+    buttonRow.append(cancelButton, saveButton);
+    modalContent.appendChild(buttonRow);
+    modal.appendChild(modalContent);
+    document.body.appendChild(modal);
 }

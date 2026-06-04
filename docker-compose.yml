@@ -1,3 +1,7 @@
+networks:
+    dev-shared:
+        external: true
+
 services:
     webapp:
         platform: linux/amd64
@@ -29,16 +33,16 @@ services:
             - FLASK_ENV=development
 # end new stuff
 
-    db:
-        image: postgres:latest
-        ports:
-            - "5432:5432"
-        user: postgres
-        environment:
-            POSTGRES_PASSWORD: ChangeMe
-            POSTGRES_DB: consoleages
-        volumes:
-            - db_data:/var/lib/postgresql
+    # db:
+    #     image: postgres:latest
+    #     ports:
+    #         - "5432:5432"
+    #     user: postgres
+    #     environment:
+    #         POSTGRES_PASSWORD: ChangeMe
+    #         POSTGRES_DB: consoleages
+    #     volumes:
+    #         - db_data:/var/lib/postgresql
 
-volumes:
-    db_data:
+# volumes:
+#     db_data:

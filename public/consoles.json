@@ -1,16 +1,16 @@
 {
     "consoles": [
         {
-            "name": "Odyssey",
-            "manufacturer": "Magnavox",
-            "release_date": "1972-09-01",
-            "image_url": "https://example.com/odyssey.png"
+            "name": "newNameFixYet0520",
+            "manufacturer": "MSI0520",
+            "release_date": "2026-05-01",
+            "image_url": "https://example.com/default.png"
         },
         {
-            "name": "Channel F",
-            "manufacturer": "Fairchild",
-            "release_date": "1976-11-01",
-            "image_url": "https://example.com/channel-f.png"
+            "name": "nameFixYet0519",
+            "manufacturer": "MSI0519",
+            "release_date": "2026-05-20",
+            "image_url": "https://example.com/default.png"
         },
         {
             "name": "Atari 2600",
@@ -79,10 +79,10 @@
             "image_url": "https://example.com/sega-cd.png"
         },
         {
-            "name": "Atari Jaguar",
-            "manufacturer": "Atari",
-            "release_date": "1993-11-23",
-            "image_url": "https://example.com/atari-jaguar.png"
+            "name": "TEST22",
+            "manufacturer": "TEST22",
+            "release_date": "2020-01-21",
+            "image_url": "https://example.com/default.png"
         },
         {
             "name": "3DO Interactive Multiplayer",
@@ -373,9 +373,27 @@
             "image_url": "https://example.com/rog-ally-x.png"
         },
         {
-            "console": "fixedyet",
+            "name": "fixedyet",
             "manufacturer": "wii",
             "release_date": "2026-03-29",
+            "image_url": "https://example.com/default.png"
+        },
+        {
+            "name": "himike",
+            "manufacturer": "nintendo",
+            "release_date": "2026-03-29",
+            "image_url": "https://example.com/default.png"
+        },
+        {
+            "name": "nameFixYet",
+            "manufacturer": "MSI",
+            "release_date": "2026-04-16",
+            "image_url": "https://example.com/default.png"
+        },
+        {
+            "name": "robintest",
+            "manufacturer": "robintestman",
+            "release_date": "2026-05-06",
             "image_url": "https://example.com/default.png"
         }
     ]
