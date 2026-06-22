@@ -1,5 +1,6 @@
 // Load JSON file
-fetch('consoles.json')
+// fetch('consoles.json')
+fetch('/consoles')
     .then(response => {
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
@@ -30,7 +31,7 @@ fetch('consoles.json')
         table.appendChild(headerRow);
         
         // Populate table with console data
-        data.consoles.forEach((consoleItem, index) => {
+        data.consoles.forEach((consoleItem) => {
             const row = document.createElement('tr');
 
             const nameCell = document.createElement('td');
@@ -46,15 +47,47 @@ fetch('consoles.json')
             row.appendChild(dateCell);
 
             const ageCell = document.createElement('td');
-            ageCell.textContent = consoleItem.age || '';
-            ageCell.className = 'age';
+
+            const releaseDateStr = consoleItem.release_date;
+            let ageHtml = '';
+
+            // prefer explicit age if present
+            if (consoleItem.age !== undefined && consoleItem.age !== null && consoleItem.age !== '') {
+                const ageNum = Number(consoleItem.age);
+                const ageClass = ageNum > 30 ? 'vintage' : ageNum > 10 ? 'retro' : 'modern';
+                ageHtml = `<span class="age ${ageClass}">${ageNum} year${ageNum === 1 ? '' : 's'}</span>`;
+            } else if (releaseDateStr) {
+                const rd = new Date(releaseDateStr);
+                if (!isNaN(rd)) {
+                    let ageYears = currentDate.getFullYear() - rd.getFullYear();
+                    let ageMonths = currentDate.getMonth() - rd.getMonth();
+                    // adjust by day-of-month
+                    if (currentDate.getDate() < rd.getDate()) ageMonths--;
+                    if (ageMonths < 0) {
+                        ageYears--;
+                        ageMonths += 12;
+                    }
+
+                    let ageClass = 'modern';
+                    if (ageYears > 30) ageClass = 'vintage';
+                    else if (ageYears > 10) ageClass = 'retro';
+
+                    const ageText = ageYears > 0
+                        ? `${ageYears} year${ageYears === 1 ? '' : 's'}, ${ageMonths} month${ageMonths === 1 ? '' : 's'}`
+                        : `${ageMonths} month${ageMonths === 1 ? '' : 's'}`;
+
+                    ageHtml = `<span class="age ${ageClass}">${ageText}</span>`;
+                }
+            }
+
+            ageCell.innerHTML = ageHtml;
             row.appendChild(ageCell);
 
             const actionCell = document.createElement('td');
             const editButton = document.createElement('button');
             editButton.textContent = 'Edit';
             editButton.className = 'edit-console-btn';
-            editButton.addEventListener('click', () => openEditModal(consoleItem, index, row));
+            editButton.addEventListener('click', () => openEditModal(consoleItem, row));
             actionCell.appendChild(editButton);
             row.appendChild(actionCell);
 
@@ -219,7 +252,7 @@ function openModal() {
     };  //END NEW 4/15
 }
 
-function openEditModal(consoleItem, index, row) {
+function openEditModal(consoleItem, row) {
     const modal = document.createElement('div');
     modal.className = 'modal-overlay';
 
@@ -263,9 +296,8 @@ function openEditModal(consoleItem, index, row) {
             return;
         }
 
-        const idx = Number(index); // ensure numeric
         const payload = {
-            index: idx,
+            id: Number(consoleItem.id),
             name: consoleInput.value.trim(),
             manufacturer: manufacturerInput.value.trim(),
             release_date: releaseInput.value,
