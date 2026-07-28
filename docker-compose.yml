@@ -1,3 +1,7 @@
+networks:
+    dev-shared:
+        external: true
+
 services:
     webapp:
         platform: linux/amd64
@@ -9,3 +13,37 @@ services:
             - "2480:80"
         volumes:
             - ./public/:/usr/share/nginx/html/
+            # new stuff
+        depends_on:
+            - backend
+        # Add nginx config to proxy /add-console to backend
+        # command: /bin/bash -c "nginx -g 'daemon off;'"
+
+    backend:
+        build:
+            context: .
+            dockerfile: Dockerfile.backend
+        restart: always
+        ports:
+            - "5002:5002"
+        volumes:
+            - ./public/:/app/public  # Mount public for file access
+        env_file:
+            - .env
+        environment:
+            - FLASK_ENV=development
+# end new stuff
+
+    # db:
+    #     image: postgres:latest
+    #     ports:
+    #         - "5432:5432"
+    #     user: postgres
+    #     environment:
+    #         POSTGRES_PASSWORD: ChangeMe
+    #         POSTGRES_DB: consoleages
+    #     volumes:
+    #         - db_data:/var/lib/postgresql
+
+# volumes:
+#     db_data:
